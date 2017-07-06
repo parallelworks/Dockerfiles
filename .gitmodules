@@ -1,0 +1,6 @@
+[submodule "salomeDockerfile"]
+	path = salomeDockerfile
+	url = https://github.com/parallelworks/salomeDockerfile.git
+[submodule "openfoamDockerfile"]
+	path = openfoamDockerfile
+	url = https://github.com/parallelworks/openfoamDockerfile.git
