@@ -3,6 +3,11 @@ python4OnShape Dockerfile
 
 This repository contains Dockerfile of Ubuntu + minimal Python (python2) + pip + some modules required for running OnShape Python scripts
 
+Notes on installing modules:
+----------------------------
+
+Installing the `stl` package may lead to an error when running onshape scripts that use the `stl` package. To resolve this issue `numpy-stl` module should be updated[1]
+
 Current configuration
 ---------------------
 
@@ -29,3 +34,8 @@ Usage
     ``` example
     docker run --rm -i -t -v `pwd`:`pwd` -w `pwd` -u $(id -u):$(id -g) marmarm/python4onshape:v0    /bin/bash 
     ```
+
+Footnotes
+=========
+
+[1] See [Importing of 3D STL Image in Python (ImportError: No module named ascii) (on stackoverflow)](https://stackoverflow.com/questions/29661823/importing-of-3d-stl-image-in-python-importerror-no-module-named-ascii)
