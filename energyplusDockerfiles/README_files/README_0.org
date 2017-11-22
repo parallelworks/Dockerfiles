@@ -1,0 +1,7 @@
+# pandoc --from org --to markdown_github  README_0.org  -s -o README0.md 
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
+
+* EnergyPlus Dockerfile 
+This repository contains Dockerfile of Ubuntu + EnergyPlus + python-minimal. Each folder has Dockerfile and installer for a different version of EnergyPlus. For more details see the README file in each folder.
+
