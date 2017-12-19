@@ -8,6 +8,7 @@ current configuration
 
 -   based on [ubuntu:16.04](https://hub.docker.com/r/library/ubuntu/)
 -   Installed using [CalculiX](http://www.calculix.de/) version 2.12 (multi-threaded version)
+-   `unical` is from <http://www.calculixforwin.com/> (`CalculiXLauncher-03beta2-64bit-linux/bin/`)
 -   The current version is tagged as parallelWorks/calculix:v2.12 on [docker hub](https://hub.docker.com/r/parallelworks/calculix).
 
 Usage
@@ -15,9 +16,9 @@ Usage
 
 ### Building the docker:
 
--   Building the docker using the Dockerfile requires unpacking the `ccx-212-patch-PW.tgz` file.
+-   Building the docker requires unpacking the `ccx-212-patch-PW.tgz` file. After
 
-Then remove the .tgz file from the directory to make the docker images a bit smaller.
+unpacking remove the `ccx-212-patch-PW.tgz` file from the directory to make the docker images a bit smaller.
 
 -   Build the docker image by running this command:
 

@@ -22,10 +22,12 @@ RUN apt-get update && \
 	libglu1-mesa-dev \
 	libxi-dev \
 	libxmu-dev \
+    time \
     git &&   \
     # Add links to ccx and cgx
     ln -s /opt/ccx-212-patch-PW/src/ccx_2.12_MT /usr/bin/ccx_2.12    && \
     ln -s /opt/cgx_2.12  /usr/bin/cgx_2.12   && \
+    ln -s /opt/unical  /usr/bin/unical   && \
     # Perform cleanup 
     rm -rf /var/lib/apt/lists/* 
 

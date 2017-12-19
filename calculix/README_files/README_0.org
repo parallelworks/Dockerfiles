@@ -7,13 +7,14 @@ This is a Dockerfile for Ubuntu + CalculiX + python-minimal.
 
 ** current configuration
    - based on [[https://hub.docker.com/r/library/ubuntu/][ubuntu:16.04]]
-   - Installed using [[http://www.calculix.de/][CalculiX]] version 2.12 (multi-threaded version) 
+   - Installed using [[http://www.calculix.de/][CalculiX]] version 2.12 (multi-threaded version)
+   - =unical= is from http://www.calculixforwin.com/ (=CalculiXLauncher-03beta2-64bit-linux/bin/=)
    - The current version is tagged as parallelWorks/calculix:v2.12 on [[https://hub.docker.com/r/parallelworks/calculix][docker hub]].
 	 
 ** Usage
 *** Building the docker:
-	- Building the docker using the Dockerfile requires unpacking the =ccx-212-patch-PW.tgz= file. 
-	Then remove the .tgz file from the directory to make the docker images a bit smaller.
+	- Building the docker requires unpacking the =ccx-212-patch-PW.tgz= file. After 
+	unpacking remove the =ccx-212-patch-PW.tgz= file from the directory to make the docker images a bit smaller.
 	- Build the docker image by running this command:
 	  #+BEGIN_EXAMPLE
 	  docker build -t ubuntu16-ccx2p12 . 
