@@ -24,15 +24,33 @@ RUN apt-get update && \
 	libxmu-dev \
     time \
     git &&   \
-    # Add links to ccx and cgx
-    ln -s /opt/ccx-212-patch-PW/src/ccx_2.12_MT /usr/bin/ccx_2.12    && \
-    ln -s /opt/cgx_2.12  /usr/bin/cgx_2.12   && \
-    ln -s /opt/unical  /usr/bin/unical   && \
+    # Compile spooles   
+    cd /opt/ccx-212-patch-PW/spooles.2.2/    && \
+	make lib    && \
+	cd MT/src/   && \
+	make   && \
+	# Compile ARPACK   
+	cd /opt/ccx-212-patch-PW/ARPACK/   && \
+	make lib   && \
+	# removes the object files, but keep the library  
+	make clean && \
+	# Compile ccx_2.12_MT   
+    cd /opt/ccx-212-patch-PW/src  && \
+    make  && \
+    cp /opt/ccx-212-patch-PW/src/ccx_2.12_MT /opt/CalculiX-2.12-executables/  && \
+    cd /opt && \
     # Perform cleanup 
+    rm -r  ccx-212-patch-PW   && \
     rm -rf /var/lib/apt/lists/* 
+
+# Add the calculix executable path  to PATH
+ENV PATH="/opt/CalculiX-2.12-executables:${PATH}"
 
 RUN useradd -ms /bin/bash  ccxuser
 
 USER ccxuser
+
+# Add the calculix executable path  to PATH of ccxuser 
+ENV PATH="/opt/CalculiX-2.12-executables:${PATH}"
 
 CMD ["/bin/bash"]
