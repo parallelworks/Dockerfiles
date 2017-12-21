@@ -23,6 +23,8 @@ Usage
     docker build -t ubuntu16-ccx2p12 . 
     ```
 
+-   To build a docker with `root` as the default login user copy `Dockerfile_rootUser` to `Dockerfile`.
+
 ### Running the docker
 
 -   This command starts the docker and mounts the current directory to docker and deletes the docker container after exit:
