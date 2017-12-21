@@ -1,0 +1,24 @@
+# pandoc --from org --to markdown_github  README_0.org  -s -o README0.md 
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
+
+* Octave Dockerfile 
+This is a Dockerfile for Ubuntu + GNU Octave 
+
+** current configuration
+   - based on [[https://hub.docker.com/r/library/ubuntu/][ubuntu:16.04]]
+   - [[https://www.gnu.org/software/octave/][GNU Octave]] version 4.0.0
+   - The current version is tagged as parallelWorks/octave:v4.0.0 on [[https://hub.docker.com/r/parallelworks/calculix][docker hub]].
+	 
+** Usage
+*** Building the docker:
+	- Build the docker image by running this command:
+	  #+BEGIN_EXAMPLE
+	  docker build -t ubuntu16-octave . 
+	  #+END_EXAMPLE
+	- To build a docker with =root= as the default login user copy =Dockerfile_rootUser= to  =Dockerfile=.
+*** Running the docker
+	- This command starts the docker and mounts the current directory to docker and deletes the docker container after exit:
+      #+BEGIN_EXAMPLE
+      docker run --rm -i -t -v `pwd`:`pwd` -w `pwd` -u $(id -u):$(id -g) parallelworks/octave:v4.0.0 /bin/bash 
+	  #+END_EXAMPLE

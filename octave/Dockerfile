@@ -1,0 +1,17 @@
+# This dockerfile installs octave on ubuntu 16.04 with no GUI 
+
+# Use Ubuntu 16.04 as a base image
+FROM ubuntu:16.04
+
+RUN apt-get update && \
+    apt-get install -y  \
+    octave   \
+    git &&   \
+    # Perform cleanup 
+    rm -rf /var/lib/apt/lists/* 
+
+RUN useradd -ms /bin/bash  octaveuser
+
+USER octaveuser
+
+CMD ["/bin/bash"]
