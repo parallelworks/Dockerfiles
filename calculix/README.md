@@ -16,7 +16,6 @@ Usage
 
 ### Building the docker:
 
--   Building the docker requires unpacking the `ccx-212-patch-PW.tgz` file. After unpacking remove the `ccx-212-patch-PW.tgz` file from the directory to make the docker images a bit smaller.
 -   Build the docker image by running this command:
 
     ``` example

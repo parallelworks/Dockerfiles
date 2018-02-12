@@ -23,8 +23,16 @@ RUN apt-get update && \
 	libxi-dev \
 	libxmu-dev \
     time \
+    python-minimal  \
+    python-pip      \
     git &&   \
-    # Compile spooles   
+    # upgrade pip \
+    pip install --upgrade pip  && \
+    # unpack calculix
+    cd /opt/   && \
+    tar -zxf ccx-212-patch-PW.tgz  && \
+    rm ccx-212-patch-PW.tgz   && \
+    # Compile spooles
     cd /opt/ccx-212-patch-PW/spooles.2.2/    && \
 	make lib    && \
 	cd MT/src/   && \
