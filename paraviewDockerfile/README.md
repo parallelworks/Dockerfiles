@@ -7,7 +7,7 @@ Current configuration
 ---------------------
 
 -   Based on marmarm/xvfb which has xvfb installed on [ubuntu:14.04](https://hub.docker.com/r/library/ubuntu/)
--   Installed using ParaView-5.4.0
+-   Installs ParaView-5.4.1
 -   I have only tested to run pvpython via xvfb run
 -   The current version is tagged as marmarm/paraview:v5\_4u\_imgmagick on docker hub.
 
@@ -16,7 +16,7 @@ Usage
 
 ### Building the docker:
 
--   Building the docker using the Dockerfile requires downloading the Paraview binary from <https://www.paraview.org/download/> and unpacking the archive. Then remove the .tar.gz file from the directory to make the building process a bit faster.
+-   The Dockerfile downloads Salome binary from <https://www.paraview.org/download/> The build may fail if the address above changes on ParaView website.
 -   Build the docker image by running this command:
 
     ``` example
