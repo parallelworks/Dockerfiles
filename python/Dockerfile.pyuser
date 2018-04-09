@@ -1,4 +1,4 @@
-# Use Ubuntu 16.04 as a base image
+# Use python:3.6 xas a base image
 FROM python:3.6
 
 # Install pandas and xlrd
