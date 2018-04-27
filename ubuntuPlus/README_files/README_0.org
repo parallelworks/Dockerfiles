@@ -1,0 +1,19 @@
+# pandoc --from org --to markdown_github  README_0.org  -s -o README0.md 
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
+
+* ubuntu-plus Dockerfile 
+This repository contains Dockerfile for ubuntu + some basic tools/libraries
+
+** Current configuration
+   - Based on [[https://hub.docker.com/r/library/ubuntu/][ubuntu:18.04]]
+   - Default user is nruser (the docker file [[Dockerfile.rootUser]] sets the default user to =root=)
+	 
+** Usage
+   Start the docker by:
+   #+BEGIN_EXAMPLE
+   docker run -it parallelworks/ubuntu-plus:18.04 
+   #+END_EXAMPLE
+
+
+
