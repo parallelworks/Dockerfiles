@@ -1,0 +1,20 @@
+# pandoc --from org --to markdown_github  README_0.org  -s -o README0.md 
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
+
+* imagemagick Dockerfile 
+This repository contains Dockerfile for imagemagick
+
+** Current configuration
+   - Based on [[https://hub.docker.com/r/library/ubuntu/][ubuntu:18.04]]
+   - Version: ImageMagick 6.9.7-4 Q16 x86_64 20170114 http://www.imagemagick.org
+   - Default user is imguser (the docker file [[Dockerfile.rootUser]] sets the default user to =root=)
+	 
+** Usage
+   Start the docker by:
+   #+BEGIN_EXAMPLE
+   docker run -it parallelworks/imagemagick:v6.9
+   #+END_EXAMPLE
+
+
+

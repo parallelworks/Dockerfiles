@@ -1,0 +1,17 @@
+# Use Ubuntu 18.04 as a base image
+FROM ubuntu:18.04
+
+# Install imagemagick 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    imagemagick &&   \
+    # Perform cleanup \
+    rm -rf /var/lib/apt/lists/* 
+
+# Add user so that we don't have to run as root
+RUN useradd -ms /bin/bash  imguser 
+
+USER imguser  
+
+CMD ["/bin/bash"]
+
