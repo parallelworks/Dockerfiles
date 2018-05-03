@@ -1,0 +1,19 @@
+# To convert to github markdown use pandoc:
+# pandoc --from org --to markdown_github  README.org  -s -o README.md 
+
+* OpenModelica Dockerfile 
+This repository contains Dockerfile for OpenModelica
+
+** Current configuration
+   - Based on [[https://hub.docker.com/r/library/ubuntu/][ubuntu:16.04]]
+   - Installs OpenModelica  (currently version 1.12.0 release) from OpenModelica ppa (http://build.openmodelica.org/apt)
+   - Default user is =omcuser= (the docker file [[Dockerfile.rootuser]] sets the default user to =root=)
+	 
+** Usage
+   Start the docker by:
+   #+BEGIN_EXAMPLE
+   docker run -it parallelworks/openmodelica:v1.12
+   #+END_EXAMPLE
+
+
+

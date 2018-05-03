@@ -1,0 +1,26 @@
+# Use Ubuntu 16.04 as a base image
+FROM ubuntu:16.04
+
+# Install OpenModelica
+# This command installs OpenModelica from openmodelica ppa
+# omc omshell omshell-terminal omc-doc are installed.
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    	    lsb-release \
+	    wget  && \
+    # add OpenModelica release ppa
+    for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` release"; done |  tee /etc/apt/sources.list.d/openmodelica.list  && \
+    apt-get update && \
+    wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- |  apt-key add - && \
+    apt-get update &&  \
+    apt-get install  -y \
+    	    omc omshell omshell-terminal omc-doc && \
+    # Perform cleanup \
+    rm -rf /var/lib/apt/lists/*
+
+RUN useradd -ms /bin/bash  omcuser
+
+USER omcuser
+
+CMD ["/bin/bash"]
