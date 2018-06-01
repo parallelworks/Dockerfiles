@@ -5,7 +5,8 @@ FROM python:3.6
 
 RUN pip install pandas  && \
     pip install matplotlib  && \
-    pip install xlrd
+    pip install xlrd && \
+    pip install Pillow
 
 RUN useradd -ms /bin/bash  pyuser
 

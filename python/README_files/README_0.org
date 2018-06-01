@@ -3,11 +3,11 @@
 #+OPTIONS: ^:nil
 
 * python-tools Docker file 
-This repository contains Dockerfile for python + numpy, matplotlib, pytz, six, python-dateutil, pandas and xlrd modules
+This repository contains Dockerfile for python + numpy, matplotlib, pytz, six, python-dateutil, pandas, Pillow and xlrd modules
 
 ** Current configuration
    - Based on [[https://hub.docker.com/_/python/][python:3.6]]
-   - has these additional modules: numpy, matplotlib, pytz, six, python-dateutil, pandas and xlrd 
+   - has these additional modules: numpy, matplotlib, pytz, six, python-dateutil, pandas, Pillow and xlrd 
    - Default user is root (the docker file [[Dockerfile.pyuser]] sets the default user to =pyuser=)
 	 
 ** Usage
